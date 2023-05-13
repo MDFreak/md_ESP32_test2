@@ -4334,6 +4334,8 @@
       uint8_t startWIFI(bool startup)
         {
           bool ret = MD_ERR;
+          char _cssid[LOGINTXT_MAX_LEN + 1];
+          char _cpw[LOGINTXT_MAX_LEN + 1];
               //SVAL(" startWIFI   Start WiFi ", startup);
           #if (USE_WIFI > OFF)
               dispStatus("  start WIFI");
@@ -4345,54 +4347,72 @@
                                 SHEXVAL(" setup startWIFI created ipList ", (int) &ipList);
                                 STXT(" setup startWIFI add WIFI 0");
                               #endif
-                  ipList.append(WIFI_FIXIP0, WIFI_GATEWAY0, WIFI_SUBNET, WIFI_SSID0, WIFI_SSID0_PW);
+                  sprintf(_cssid, "%s\0", WIFI_SSID0);
+                  sprintf(_cpw, "%s\0", WIFI_SSID0_PW);
+                  ipList.append(WIFI_FIXIP0, WIFI_GATEWAY0, WIFI_SUBNET, _cssid, _cpw);
                   #if (WIFI_ANZ_LOGIN > 1)
                             #if (DEBUG_MODE > CFG_DEBUG_STARTUP)
                                 STXT(" setup startWIFI add WIFI 1");
                               #endif
-                      ipList.append(WIFI_FIXIP1, WIFI_GATEWAY1, WIFI_SUBNET, WIFI_SSID1, WIFI_SSID1_PW);
+                      sprintf(_cssid, "%s\0", WIFI_SSID1);
+                      sprintf(_cpw, "%s\0", WIFI_SSID1_PW);
+                      ipList.append(WIFI_FIXIP1, WIFI_GATEWAY1, WIFI_SUBNET, _cssid, _cpw);
                     #endif
                   #if (WIFI_ANZ_LOGIN > 2)
                             #if (DEBUG_MODE > CFG_DEBUG_STARTUP)
                                 STXT(" setup startWIFI add WIFI 2");
                               #endif
-                      ipList.append(WIFI_FIXIP2, WIFI_GATEWAY2, WIFI_SUBNET, WIFI_SSID2, WIFI_SSID2_PW);
+                      sprintf(_cssid, "%s\0", WIFI_SSID2);
+                      sprintf(_cpw, "%s\0", WIFI_SSID2_PW);
+                      ipList.append(WIFI_FIXIP2, WIFI_GATEWAY2, WIFI_SUBNET, _cssid, _cpw);
                     #endif
                   #if (WIFI_ANZ_LOGIN > 3)
                             #if (DEBUG_MODE > CFG_DEBUG_STARTUP)
                                 STXT(" setup startWIFI add WIFI 3");
                               #endif
-                      ipList.append(WIFI_FIXIP3, WIFI_GATEWAY3, WIFI_SUBNET, WIFI_SSID3, WIFI_SSID3_PW);
+                      sprintf(_cssid, "%s\0", WIFI_SSID3);
+                      sprintf(_cpw, "%s\0", WIFI_SSID3_PW);
+                      ipList.append(WIFI_FIXIP3, WIFI_GATEWAY3, WIFI_SUBNET, _cssid, _cpw);
                     #endif
                   #if (WIFI_ANZ_LOGIN > 4)
                             #if (DEBUG_MODE > CFG_DEBUG_STARTUP)
                                 STXT(" setup startWIFI add WIFI 4");
                               #endif
-                      ipList.append(WIFI_FIXIP4, WIFI_GATEWAY4, WIFI_SUBNET, WIFI_SSID4, WIFI_SSID4_PW);
+                      sprintf(_cssid, "%s\0", WIFI_SSID4);
+                      sprintf(_cpw, "%s\0", WIFI_SSID4_PW);
+                      ipList.append(WIFI_FIXIP4, WIFI_GATEWAY4, WIFI_SUBNET, _cssid, _cpw);
                     #endif
                   #if (WIFI_ANZ_LOGIN > 5)
                             #if (DEBUG_MODE > CFG_DEBUG_STARTUP)
                                 STXT(" setup startWIFI add WIFI 5");
                               #endif
-                      ipList.append(WIFI_FIXIP5, WIFI_GATEWAY5, WIFI_SUBNET, WIFI_SSID5, WIFI_SSID5_PW);
+                      sprintf(_cssid, "%s\0", WIFI_SSID5);
+                      sprintf(_cpw, "%s\0", WIFI_SSID5_PW);
+                      ipList.append(WIFI_FIXIP5, WIFI_GATEWAY5, WIFI_SUBNET, _cssid, _cpw);
                     #endif
                   #if (WIFI_ANZ_LOGIN > 6)
                             #if (DEBUG_MODE > CFG_DEBUG_STARTUP)
                                 STXT(" setup startWIFI add WIFI 6");
                               #endif
-                      ipList.append(WIFI_FIXIP6, WIFI_GATEWAY6, WIFI_SUBNET, WIFI_SSID6, WIFI_SSID6_PW);
+                      sprintf(_cssid, "%s\0", WIFI_SSID6);
+                      sprintf(_cpw, "%s\0", WIFI_SSID6_PW);
+                      ipList.append(WIFI_FIXIP6, WIFI_GATEWAY6, WIFI_SUBNET, _cssid, _cpw);
                     #endif
                   #if (WIFI_ANZ_LOGIN > 7)
                             #if (DEBUG_MODE > CFG_DEBUG_STARTUP)
                                 STXT(" setup startWIFI add WIFI 7");
                               #endif
-                      ipList.append(WIFI_FIXIP7, WIFI_GATEWAY7, WIFI_SUBNET, WIFI_SSID7, WIFI_SSID7_PW);
+                      sprintf(_cssid, "%s\0", WIFI_SSID7);
+                      sprintf(_cpw, "%s\0", WIFI_SSID7_PW);
+                      ipList.append(WIFI_FIXIP7, WIFI_GATEWAY7, WIFI_SUBNET, _cssid, _cpw);
                     #endif
                   #if (WIFI_ANZ_LOGIN > 8)
                             #if (DEBUG_MODE > CFG_DEBUG_STARTUP)
                                 STXT(" setup add WIFI 8");
                               #endif
-                      ipList.append(WIFI_FIXIP8, WIFI_GATEWAY8, WIFI_SUBNET, WIFI_SSID8, WIFI_SSID8_PW);
+                      sprintf(_cssid, "%s\0", WIFI_SSID8);
+                      sprintf(_cpw, "%s\0", WIFI_SSID8_PW);
+                      ipList.append(WIFI_FIXIP8, WIFI_GATEWAY8, WIFI_SUBNET, _cssid, _cpw);
                     #endif
                             //STXT(UTLN(" setup startWIFI locWIFI fertig");
 
