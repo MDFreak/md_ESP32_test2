@@ -126,7 +126,7 @@
 
             #define WIFI_ANZ_LOCIP  WIFI_ANZ_LOGIN
             #if   !(BOARD ^ MC_ESP32_Node)
-                  #define WIFI_FIXIP0     0x1800A8C0ul // 10.0.0.24   lowest first
+                  #define WIFI_FIXIP0     0x1900000Aul // 10.0.0.25   lowest first
                   #define WIFI_FIXIP1     0x1900000Aul // 10.0.0.25
             #elif !(BOARD ^ MC_ESP32_D1_MINI)
                    #define WIFI_FIXIP1    0x1A00000Aul // 10.0.0.26
@@ -137,7 +137,7 @@
                   #define WIFI_FIXIP1     0x1900000Aul // 10.0.0.25
               #endif
             #ifdef USE_LOCAL_IP
-                #define WIFI_GATEWAY0     0x0100A8C0ul // 10.0.0.1     // Bauwagen
+                #define WIFI_GATEWAY0     0x8B00000Aul // 10.0.0.139      // Bauwagen
                 #define WIFI_GATEWAY1     0x8B00000Aul // 10.0.0.139      // Moosgraben
                 #define WIFI_GATEWAY2     0x8B00000Aul // 10.0.0.139      // Jungberg
                 #define WIFI_FIXIP2       0x1800000Aul // 10.0.0.24
